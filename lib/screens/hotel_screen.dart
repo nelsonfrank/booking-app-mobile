@@ -6,7 +6,9 @@ import 'package:booktickets/utils/app_layout.dart';
 import 'package:booktickets/utils/app_styles.dart';
 
 class HotelScreen extends StatelessWidget {
-  const HotelScreen({super.key});
+  final Map<String, dynamic> hotel;
+
+  const HotelScreen({required this.hotel, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,22 +32,22 @@ class HotelScreen extends StatelessWidget {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
                 color: Styles.primaryColor,
-                image: const DecorationImage(
+                image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: AssetImage("assets/images/refreshment.jpg"))),
+                    image: AssetImage("assets/images/${hotel['image']}"))),
           ),
           const Gap(10),
           Text(
-            "Open space",
+            hotel['place'],
             style: Styles.headingLineStyle2.copyWith(color: Styles.kakiColor),
           ),
           Text(
-            "London",
+            hotel['destination'],
             style: Styles.headingLineStyle3.copyWith(color: Colors.white),
           ),
           const Gap(8),
           Text(
-            "\$40/night",
+            "\$${hotel['price']}/night",
             style: Styles.headingLineStyle1.copyWith(color: Styles.kakiColor),
           ),
         ]));
