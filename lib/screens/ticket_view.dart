@@ -15,18 +15,18 @@ class TicketView extends StatelessWidget {
     final size = AppLayout.getSize(context);
     return SizedBox(
       width: size.width * 0.85,
-      height: 200,
+      height: AppLayout.getHeight(200),
       child: Container(
-          margin: const EdgeInsets.only(left: 16),
+          margin: EdgeInsets.only(left: AppLayout.getHeight(16)),
           child: Column(
             children: [
               Container(
-                  decoration: const BoxDecoration(
-                      color: Color(0xFF526799),
+                  decoration: BoxDecoration(
+                      color: const Color(0xFF526799),
                       borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(21),
-                          topRight: Radius.circular(21))),
-                  padding: const EdgeInsets.all(16),
+                          topLeft: Radius.circular(AppLayout.getHeight(21)),
+                          topRight: Radius.circular(AppLayout.getHeight(21)))),
+                  padding: EdgeInsets.all(AppLayout.getHeight(16)),
                   child: Column(children: [
                     Row(
                       children: [
@@ -53,10 +53,11 @@ class TicketView extends StatelessWidget {
                                           children: List.generate(
                                               (constraints.constrainWidth() / 6)
                                                   .floor(),
-                                              (index) => const SizedBox(
-                                                  width: 3,
-                                                  height: 1,
-                                                  child: DecoratedBox(
+                                              (index) => SizedBox(
+                                                  width: AppLayout.getWidth(3),
+                                                  height:
+                                                      AppLayout.getHeight(1),
+                                                  child: const DecoratedBox(
                                                       decoration: BoxDecoration(
                                                           color:
                                                               Colors.white)))));
@@ -107,8 +108,8 @@ class TicketView extends StatelessWidget {
                 child: Row(
                   children: [
                     SizedBox(
-                        height: 20,
-                        width: 10,
+                        height: AppLayout.getHeight(20),
+                        width: AppLayout.getWidth(10),
                         child: DecoratedBox(
                           decoration: BoxDecoration(
                               color: Styles.bgColor,
@@ -129,8 +130,8 @@ class TicketView extends StatelessWidget {
                           children: List.generate(
                               (constraints.constrainWidth() / 15).floor(),
                               (index) => SizedBox(
-                                    width: 5,
-                                    height: 1,
+                                    width: AppLayout.getWidth(5),
+                                    height: AppLayout.getHeight(1),
                                     child: DecoratedBox(
                                         decoration: BoxDecoration(
                                       color: Styles.bgColor,
@@ -140,8 +141,8 @@ class TicketView extends StatelessWidget {
                       }),
                     )),
                     SizedBox(
-                        height: 20,
-                        width: 10,
+                        height: AppLayout.getHeight(20),
+                        width: AppLayout.getWidth(10),
                         child: DecoratedBox(
                           decoration: BoxDecoration(
                               color: Styles.bgColor,
