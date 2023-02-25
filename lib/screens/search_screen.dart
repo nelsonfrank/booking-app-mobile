@@ -57,7 +57,11 @@ class SearchScreen extends StatelessWidget {
                         ))
                   ],
                 )),
-          )
+          ),
+          Gap(AppLayout.getHeight(25)),
+          Container(
+            child: Row(children: []),
+          ),
         ],
       ),
     );
